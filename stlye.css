@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #63366f;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffb6e6,
+      #e7b8ff,
+      #b99aff,
+      #9a70ff
+    );
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background: #ff5fc7;
+  top: -100px;
+  left: -100px;
+}
+
+body::after {
+  background: #a970ff;
+  right: -100px;
+  bottom: -100px;
+}
+
+.app {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  padding: 25px 15px 60px;
+}
+
+.card {
+  width: 100%;
+  padding: 40px 35px;
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 25px 70px rgba(88, 38, 130, 0.2);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.heart {
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #753c82;
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: #7b3e86;
+}
+
+.subtitle {
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #744f78;
+}
+
+label {
+  display: block;
+  margin: 20px 5px 8px;
+  font-weight: bold;
+  color: #683a72;
+}
+
+label span {
+  font-size: 13px;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  color: #4d3153;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 58px;
+  padding: 0 18px;
+}
+
+input[type="file"] {
+  padding: 14px;
+  cursor: pointer;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+  padding: 17px;
+  line-height: 1.6;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow:
+    0 0 0 3px rgba(220, 74, 221, 0.2);
+}
+
+#photoCount {
+  text-align: center;
+  margin-top: 10px;
+  color: #805a84;
+  font-size: 14px;
+}
+
+#preview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+}
+
+#preview img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid white;
+}
+
+button {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 20px;
+
+  border: none;
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff249c,
+      #b842ff
+    );
+
+  box-shadow:
+    0 12px 25px rgba(222, 38, 178, 0.25);
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#linkBox {
+  margin-top: 30px;
+  padding: 25px;
+  text-align: center;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#linkBox h2 {
+  margin-bottom: 15px;
+}
+
+#shareLink {
+  height: 55px;
+  padding: 0 15px;
+  font-size: 13px;
+}
+
+#linkBox p {
+  margin-top: 15px;
+}
+
+.lock {
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+#passwordPage {
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+#passwordPage p {
+  margin: 12px 0;
+  line-height: 1.7;
+}
+
+#recipientName {
+  margin-bottom: 25px;
+}
+
+#error {
+  min-height: 25px;
+  color: #e32e72;
+  font-weight: bold;
+}
+
+#surprisePage {
+  text-align: center;
+}
+
+.celebration {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+#surprisePage h1 {
+  margin-bottom: 5px;
+}
+
+#surpriseName {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#surpriseMessage {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
+.musicBox {
+  max-width: 500px;
+  margin: 20px auto 35px;
+  padding: 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+#musicBtn {
+  width: auto;
+  min-width: 210px;
+  min-height: 50px;
+  padding: 10px 25px;
+  margin-top: 0;
+}
+
+.memories {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding: 10px 0 40px;
+}
+
+.photo-card {
+  width: min(100%, 520px);
+  padding: 12px 12px 45px;
+
+  background: white;
+
+  box-shadow:
+    0 18px 35px rgba(60, 20, 80, 0.24);
+
+  transform: rotate(var(--rotation));
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.bottom {
+  padding-top: 20px;
+  font-weight: bold;
+  color: #743d80;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+
+  .app {
+    padding: 15px 10px 35px;
+  }
+
+  .card {
+    padding: 28px 18px;
+    border-radius: 24px;
+  }
+
+  .heart {
+    font-size: 55px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  #preview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #surpriseName {
+    font-size: 25px;
+  }
+
+  #surpriseMessage {
+    font-size: 16px;
+  }
+
+  .photo-card {
+    width: 94%;
+    padding: 9px 9px 35px;
+  }
+
+  #gallery {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .card {
+    padding: 24px 14px;
+  }
+
+  .photo-card {
+    width: 96%;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
