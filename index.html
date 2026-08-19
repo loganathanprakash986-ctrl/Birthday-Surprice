@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Special Surprise 💗</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- CREATOR PAGE -->
+    <section id="creator" class="card">
+
+      <div class="heart">💗</div>
+
+      <h1>Create a Special Surprise</h1>
+
+      <p class="subtitle">
+        Create a beautiful birthday surprise for someone special ✨
+      </p>
+
+      <label for="name">Recipient Name</label>
+      <input
+        id="name"
+        type="text"
+        placeholder="Enter name"
+      >
+
+      <label for="password">Secret Password 🔐</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Create a password"
+      >
+
+      <label for="message">Birthday Wishes 💌</label>
+      <textarea
+        id="message"
+        placeholder="Write your special wishes..."
+      ></textarea>
+
+      <label for="photos">
+        Photos 📸
+        <span>(Maximum 15)</span>
+      </label>
+
+      <input
+        id="photos"
+        type="file"
+        accept="image/*"
+        multiple
+      >
+
+      <p id="photoCount">0 / 15 photos selected</p>
+
+      <div id="preview"></div>
+
+      <label for="music">
+        Background Music 🎵
+      </label>
+
+      <input
+        id="music"
+        type="file"
+        accept="audio/*"
+      >
+
+      <button id="createBtn">
+        Create Surprise Link ✨
+      </button>
+
+      <div id="linkBox" class="hidden">
+
+        <h2>Your Surprise Link is Ready! 💗</h2>
+
+        <input
+          id="shareLink"
+          type="text"
+          readonly
+        >
+
+        <button id="copyBtn">
+          Copy Link ❤️
+        </button>
+
+        <p>
+          Send this link to your special person 🥺💗
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PASSWORD PAGE -->
+    <section
+      id="passwordPage"
+      class="card hidden"
+    >
+
+      <div class="lock">🔐</div>
+
+      <h1>A Special Surprise 💗</h1>
+
+      <p>This surprise is specially made for</p>
+
+      <h2 id="recipientName"></h2>
+
+      <input
+        id="unlockPassword"
+        type="password"
+        placeholder="Enter secret password"
+      >
+
+      <button id="unlockBtn">
+        Open Surprise 💝
+      </button>
+
+      <p id="error"></p>
+
+    </section>
+
+
+    <!-- SURPRISE PAGE -->
+    <section
+      id="surprisePage"
+      class="card hidden"
+    >
+
+      <div class="celebration">
+        🎉 💗 ✨
+      </div>
+
+      <h1>Happy Birthday 🎂</h1>
+
+      <h2 id="surpriseName"></h2>
+
+      <p id="surpriseMessage"></p>
+
+      <div class="musicBox">
+
+        <button id="musicBtn">
+          🎵 Play Music
+        </button>
+
+        <audio
+          id="backgroundMusic"
+          loop
+        ></audio>
+
+      </div>
+
+      <h2 class="memories">
+        Our Beautiful Memories 📸
+      </h2>
+
+      <div id="gallery"></div>
+
+      <p class="bottom">
+        Made with love 💗
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
