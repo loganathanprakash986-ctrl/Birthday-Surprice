@@ -1,335 +1,1591 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <title>Special Birthday Surprise 💗</title>
+<title>Special Surprise 💗</title>
 
-  <link rel="stylesheet" href="style.css">
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family:
+    "Trebuchet MS",
+    Arial,
+    sans-serif;
+
+  color: #63366f;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffb6e6 0%,
+      #edc0ff 35%,
+      #c4a4ff 70%,
+      #9570ff 100%
+    );
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-glow {
+  position: fixed;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: .45;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.glow-one {
+  background: #ff55c8;
+  top: -120px;
+  left: -100px;
+}
+
+.glow-two {
+  background: #9c6cff;
+  right: -120px;
+  top: 35%;
+}
+
+.glow-three {
+  background: #ff9ddd;
+  bottom: -130px;
+  left: 25%;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  width: 100%;
+  max-width: 850px;
+
+  margin: auto;
+
+  padding:
+    25px 15px 60px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  width: 100%;
+
+  padding:
+    40px 35px;
+
+  border-radius: 32px;
+
+  background:
+    rgba(255,255,255,.50);
+
+  border:
+    1px solid
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 25px 70px
+    rgba(75,30,120,.20);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart-logo {
+  text-align: center;
+
+  font-size: 75px;
+
+  margin-bottom: 25px;
+
+  filter:
+    drop-shadow(
+      0 10px 18px
+      rgba(255,0,130,.25)
+    );
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+  text-align: center;
+
+  color: #743c80;
+
+  font-size: 34px;
+
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: #743c80;
+}
+
+.subtitle {
+  max-width: 650px;
+
+  margin:
+    0 auto 35px;
+
+  text-align: center;
+
+  line-height: 1.8;
+
+  color: #765178;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+label {
+  display: block;
+
+  margin:
+    22px 5px 10px;
+
+  color: #68396f;
+
+  font-weight: bold;
+
+  font-size: 16px;
+}
+
+.small-label {
+  font-size: 13px;
+  font-weight: normal;
+  opacity: .7;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+input[type="file"] {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.88);
+
+  color: #503655;
+
+  font-family: inherit;
+
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 62px;
+
+  padding:
+    0 20px;
+}
+
+textarea {
+  min-height: 140px;
+
+  padding: 18px 20px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+input[type="file"] {
+  padding: 14px;
+
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow:
+    0 0 0 4px
+    rgba(220,70,220,.16);
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photo-count {
+  text-align: center;
+
+  margin-top: 10px;
+
+  color: #805a84;
+
+  font-size: 14px;
+}
+
+.thumbs {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.thumbs img {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 13px;
+
+  border:
+    3px solid white;
+
+  box-shadow:
+    0 5px 15px
+    rgba(70,20,90,.15);
+}
+
+
+/* =========================
+   MUSIC INFO
+========================= */
+
+.music-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin:
+    28px 0 20px;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.38);
+}
+
+.music-icon {
+  font-size: 35px;
+}
+
+.music-info strong {
+  color: #683a72;
+}
+
+.music-info p {
+  margin-top: 5px;
+
+  font-size: 13px;
+
+  opacity: .75;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.main-button {
+  width: 100%;
+
+  min-height: 60px;
+
+  margin-top: 18px;
+
+  border-radius: 32px;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff249c,
+      #b842ff
+    );
+
+  box-shadow:
+    0 12px 28px
+    rgba(220,35,175,.25);
+
+  transition:
+    .2s;
+}
+
+.main-button:hover {
+  transform:
+    translateY(-2px);
+}
+
+.main-button:active {
+  transform:
+    scale(.98);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+  margin-top: 30px;
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,255,255,.30);
+
+  text-align: center;
+}
+
+.result h2 {
+  margin-bottom: 18px;
+
+  font-size: 23px;
+}
+
+#link {
+  width: 100%;
+
+  height: 58px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 18px;
+
+  background:
+    white;
+
+  color: #68416d;
+
+  font-size: 12px;
+}
+
+.share-note {
+  margin-top: 15px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   LOCK SCREEN
+========================= */
+
+.locked-card {
+  max-width: 600px;
+
+  margin:
+    60px auto;
+
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 75px;
+
+  margin-bottom: 20px;
+}
+
+.locked-card p {
+  margin: 10px 0;
+
+  line-height: 1.7;
+}
+
+#lockedName {
+  margin-bottom: 25px;
+}
+
+.wrong {
+  min-height: 25px;
+
+  margin-top: 12px;
+
+  color: #e52d72;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   SURPRISE PAGE
+========================= */
+
+.surprise-card {
+  text-align: center;
+}
+
+.celebrate {
+  font-size: 38px;
+
+  margin-bottom: 10px;
+}
+
+.surprise-card h1 {
+  margin-bottom: 5px;
+}
+
+#sname {
+  font-size: 30px;
+
+  margin-bottom: 20px;
+}
+
+.wish {
+  max-width: 700px;
+
+  margin:
+    0 auto 28px;
+
+  color: #68416d;
+
+  font-size: 18px;
+
+  line-height: 1.9;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+  max-width: 500px;
+
+  margin:
+    20px auto 35px;
+
+  padding: 20px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,255,255,.36);
+}
+
+.music-button {
+  min-width: 210px;
+
+  min-height: 52px;
+
+  padding:
+    10px 25px;
+
+  border-radius: 30px;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff329e,
+      #9f4cff
+    );
+}
+
+#musicStatus {
+  margin-top: 10px;
+
+  font-size: 13px;
+
+  opacity: .75;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-title {
+  margin:
+    30px 0;
+
+  text-align: center;
+
+  font-size: 25px;
+}
+
+.gallery {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 35px;
+
+  padding:
+    10px 0 40px;
+}
+
+
+/* =========================
+   POLAROID
+========================= */
+
+.photo-card {
+  width:
+    min(100%,520px);
+
+  padding:
+    12px 12px 45px;
+
+  background: white;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 18px 35px
+    rgba(60,20,80,.24);
+
+  transform:
+    rotate(var(--rotation));
+
+  transition:
+    .3s;
+}
+
+.photo-card:hover {
+  transform:
+    rotate(0deg)
+    scale(1.02);
+}
+
+.photo-card img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom-message {
+  padding-top: 20px;
+
+  color: #743d80;
+
+  font-size: 17px;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+  .app {
+    padding:
+      15px 9px 35px;
+  }
+
+  .card {
+    padding:
+      28px 18px;
+
+    border-radius: 25px;
+  }
+
+  .heart-logo {
+    font-size: 60px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    height: 58px;
+  }
+
+  .thumbs {
+    grid-template-columns:
+      repeat(3,1fr);
+  }
+
+  .photo-card {
+    width: 94%;
+  }
+
+  #sname {
+    font-size: 25px;
+  }
+
+  .wish {
+    font-size: 16px;
+  }
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <!-- DREAMY BACKGROUND -->
-
-  <div class="background-glow glow-one"></div>
-  <div class="background-glow glow-two"></div>
-  <div class="background-glow glow-three"></div>
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+<div class="background-glow glow-three"></div>
 
 
-  <main class="app">
-
-    <!-- =========================
-         CREATOR PAGE
-    ========================== -->
-
-    <section
-      id="creator"
-      class="card"
-    >
-
-      <div class="heart-logo">
-        💗
-      </div>
-
-      <h1>
-        Create a Special Surprise
-      </h1>
-
-      <p class="subtitle">
-        Create a beautiful birthday surprise
-        for someone special. Friend, partner,
-        sibling, parent, or anyone you love. ✨
-      </p>
+<main class="app">
 
 
-      <!-- NAME -->
+<!-- =================================================
+     CREATOR
+================================================= -->
 
-      <label for="name">
-        Recipient's Name
-      </label>
+<section
+  id="creator"
+  class="card"
+>
 
-      <input
-        id="name"
-        type="text"
-        placeholder="e.g. Anu"
-        autocomplete="off"
-      >
+  <div class="heart-logo">
+    💗
+  </div>
 
+  <h1>
+    Create a Special Surprise
+  </h1>
 
-      <!-- PASSWORD -->
-
-      <label for="pass">
-        Create a Secret Password 🔐
-      </label>
-
-      <input
-        id="pass"
-        type="password"
-        placeholder="Enter a password"
-        autocomplete="new-password"
-      >
+  <p class="subtitle">
+    Create a beautiful surprise for someone special.
+    Friend, partner, sibling, parent, or anyone you love. ✨
+  </p>
 
 
-      <!-- WISH -->
+  <label for="name">
+    Recipient's Name
+  </label>
 
-      <label for="wish">
-        Your Special Message 💌
-      </label>
-
-      <textarea
-        id="wish"
-        placeholder="Write something special..."
-      ></textarea>
-
-
-      <!-- PHOTOS -->
-
-      <label for="files">
-        Photos
-        <span class="small-label">
-          — maximum 15
-        </span>
-        📸
-      </label>
-
-      <input
-        id="files"
-        type="file"
-        accept="image/*"
-        multiple
-      >
-
-      <div
-        id="photoCount"
-        class="photo-count"
-      >
-        0 / 15 photos selected
-      </div>
-
-      <div
-        id="thumbs"
-        class="thumbs"
-      ></div>
+  <input
+    id="name"
+    type="text"
+    placeholder="e.g. Anu"
+    autocomplete="off"
+  >
 
 
-      <!-- MUSIC -->
+  <label for="pass">
+    Create a Secret Password 🔐
+  </label>
 
-      <div class="music-info">
-
-        <div class="music-icon">
-          🎵
-        </div>
-
-        <div>
-
-          <strong>
-            Background Music
-          </strong>
-
-          <p>
-            Keep <b>music.mp3</b> beside
-            index.html
-          </p>
-
-        </div>
-
-      </div>
+  <input
+    id="pass"
+    type="password"
+    placeholder="Enter a password"
+    autocomplete="new-password"
+  >
 
 
-      <!-- CREATE LINK -->
+  <label for="wish">
+    Your Special Message 💌
+  </label>
 
-      <button
-        id="create"
-        class="main-button"
-        type="button"
-      >
-        Create Surprise Link 💗
-      </button>
-
-
-      <!-- RESULT -->
-
-      <div
-        id="result"
-        class="result hidden"
-      >
-
-        <h2>
-          Your Surprise Link is Ready! 💗
-        </h2>
-
-        <input
-          id="link"
-          type="text"
-          readonly
-        >
-
-        <button
-          id="copy"
-          class="main-button"
-          type="button"
-        >
-          Copy Surprise Link ❤️
-        </button>
-
-        <p class="share-note">
-          Send this link to your special person 🥺💗
-        </p>
-
-      </div>
-
-    </section>
+  <textarea
+    id="wish"
+    placeholder="Write something special..."
+  ></textarea>
 
 
-    <!-- =========================
-         LOCKED PAGE
-    ========================== -->
+  <label for="files">
+    Photos
+    <span class="small-label">
+      — maximum 15
+    </span>
+    📸
+  </label>
 
-    <section
-      id="locked"
-      class="card locked-card hidden"
-    >
+  <input
+    id="files"
+    type="file"
+    accept="image/*"
+    multiple
+  >
 
-      <div class="lock-icon">
-        🔐
-      </div>
+  <div
+    id="photoCount"
+    class="photo-count"
+  >
+    0 / 15 photos selected
+  </div>
 
-      <h1>
-        A Special Surprise 💗
-      </h1>
+  <div
+    id="thumbs"
+    class="thumbs"
+  ></div>
+
+
+  <div class="music-info">
+
+    <div class="music-icon">
+      🎵
+    </div>
+
+    <div>
+      <strong>
+        Background Music
+      </strong>
 
       <p>
-        This surprise is specially made for
+        Keep <b>music.mp3</b> beside this file
       </p>
+    </div>
 
-      <h2 id="lockedName">
-        Someone Special
-      </h2>
-
-
-      <input
-        id="unlock"
-        type="password"
-        placeholder="Enter secret password"
-        autocomplete="off"
-      >
+  </div>
 
 
-      <button
-        id="open"
-        class="main-button"
-        type="button"
-      >
-        Open Surprise 💝
-      </button>
+  <button
+    id="create"
+    class="main-button"
+    type="button"
+  >
+    Create Surprise Link ✨
+  </button>
 
 
-      <p
-        id="wrong"
-        class="wrong"
-      ></p>
+  <div
+    id="result"
+    class="result hidden"
+  >
 
-    </section>
+    <h2>
+      Your Surprise is Ready! 💗
+    </h2>
 
-
-    <!-- =========================
-         SURPRISE PAGE
-    ========================== -->
-
-    <section
-      id="surprise"
-      class="card surprise-card hidden"
+    <input
+      id="link"
+      type="text"
+      readonly
     >
 
-      <div class="celebrate">
-        🎉 💗 ✨
-      </div>
+    <button
+      id="copy"
+      class="main-button"
+      type="button"
+    >
+      Copy Surprise Link ❤️
+    </button>
+
+    <p class="share-note">
+      Send this link to your special person 💗
+    </p>
+
+  </div>
+
+</section>
 
 
-      <h1>
-        Happy Birthday 🎂
-      </h1>
+
+<!-- =================================================
+     PASSWORD PAGE
+================================================= -->
+
+<section
+  id="locked"
+  class="card locked-card hidden"
+>
+
+  <div class="lock-icon">
+    🔐
+  </div>
+
+  <h1>
+    A Special Surprise 💗
+  </h1>
+
+  <p>
+    This surprise is specially made for
+  </p>
+
+  <h2 id="lockedName">
+    Someone Special
+  </h2>
+
+  <input
+    id="unlock"
+    type="password"
+    placeholder="Enter secret password"
+    autocomplete="off"
+  >
+
+  <button
+    id="open"
+    class="main-button"
+    type="button"
+  >
+    Open Surprise 💝
+  </button>
+
+  <p
+    id="wrong"
+    class="wrong"
+  ></p>
+
+</section>
 
 
-      <h2 id="sname">
-        Birthday Star
-      </h2>
+
+<!-- =================================================
+     SURPRISE
+================================================= -->
+
+<section
+  id="surprise"
+  class="card surprise-card hidden"
+>
+
+  <div class="celebrate">
+    🎉 💗 ✨
+  </div>
+
+  <h1>
+    Happy Birthday 🎂
+  </h1>
+
+  <h2 id="sname">
+    Someone Special
+  </h2>
+
+  <p
+    id="swish"
+    class="wish"
+  ></p>
 
 
-      <p
-        id="swish"
-        class="wish"
+  <div class="music-player">
+
+    <audio
+      id="bgMusic"
+      loop
+      preload="auto"
+    >
+      <source
+        src="music.mp3"
+        type="audio/mpeg"
       >
-        Wishing you a very happy birthday! 🎂❤️
-      </p>
+    </audio>
+
+    <button
+      id="musicBtn"
+      class="music-button"
+      type="button"
+    >
+      🎵 Play Music
+    </button>
+
+    <p id="musicStatus">
+      Tap the button to play music 💗
+    </p>
+
+  </div>
 
 
-      <!-- MUSIC -->
+  <h2 class="gallery-title">
+    Our Beautiful Memories 📸
+  </h2>
 
-      <div class="music-player">
+  <div
+    id="gallery"
+    class="gallery"
+  ></div>
 
-        <audio
-          id="bgMusic"
-          preload="auto"
-          loop
-        >
-          <source
-            src="music.mp3"
-            type="audio/mpeg"
-          >
+  <div class="bottom-message">
+    Made with love 💗
+  </div>
 
-          Your browser does not support
-          audio.
-        </audio>
+</section>
 
-
-        <button
-          id="musicBtn"
-          class="music-button"
-          type="button"
-        >
-          🎵 Play Music
-        </button>
+</main>
 
 
-        <p id="musicStatus">
-          Tap Play Music to start 🎵
-        </p>
 
-      </div>
+<script>
 
+/* =====================================================
+   SETTINGS
+===================================================== */
 
-      <!-- GALLERY -->
+const MAX_PHOTOS = 15;
 
-      <h2 class="gallery-title">
-        Our Beautiful Memories 📸
-      </h2>
+let photos = [];
 
 
-      <div
-        id="gallery"
-        class="gallery"
-      ></div>
+/* =====================================================
+   SHORTCUT
+===================================================== */
+
+const $ = id =>
+  document.getElementById(id);
 
 
-      <p class="bottom-message">
-        Made with love 💗
-      </p>
+/* =====================================================
+   ENCODE
+===================================================== */
 
-    </section>
+function encodeData(data) {
 
-  </main>
+  const json =
+    JSON.stringify(data);
+
+  const bytes =
+    new TextEncoder()
+      .encode(json);
+
+  let binary = "";
+
+  for (const byte of bytes) {
+
+    binary +=
+      String.fromCharCode(byte);
+
+  }
+
+  return btoa(binary)
+    .replace(/\+/g,"-")
+    .replace(/\//g,"_")
+    .replace(/=+$/,"");
+}
 
 
-  <!-- SCRIPT -->
+/* =====================================================
+   DECODE
+===================================================== */
 
-  <script src="script.js"></script>
+function decodeData(encoded) {
 
-</body>
-</html>
+  try {
+
+    let base64 =
+      encoded
+        .replace(/-/g,"+")
+        .replace(/_/g,"/");
+
+    while (
+      base64.length % 4
+    ) {
+
+      base64 += "=";
+
+    }
+
+    const binary =
+      atob(base64);
+
+    const bytes =
+      Uint8Array.from(
+        binary,
+        c => c.charCodeAt(0)
+      );
+
+    const json =
+      new TextDecoder()
+        .decode(bytes);
+
+    return JSON.parse(json);
+
+  } catch {
+
+    return null;
+
+  }
+}
+
+
+/* =====================================================
+   IMAGE COMPRESS
+===================================================== */
+
+function compressImage(file) {
+
+  return new Promise(
+    (resolve,reject) => {
+
+      const reader =
+        new FileReader();
+
+      reader.onload = () => {
+
+        const img =
+          new Image();
+
+        img.onload = () => {
+
+          let width =
+            img.naturalWidth;
+
+          let height =
+            img.naturalHeight;
+
+          const MAX_SIZE = 360;
+
+          if (
+            Math.max(width,height)
+            > MAX_SIZE
+          ) {
+
+            if (width > height) {
+
+              height =
+                Math.round(
+                  height *
+                  MAX_SIZE /
+                  width
+                );
+
+              width =
+                MAX_SIZE;
+
+            } else {
+
+              width =
+                Math.round(
+                  width *
+                  MAX_SIZE /
+                  height
+                );
+
+              height =
+                MAX_SIZE;
+
+            }
+
+          }
+
+          const canvas =
+            document.createElement(
+              "canvas"
+            );
+
+          canvas.width =
+            width;
+
+          canvas.height =
+            height;
+
+          const ctx =
+            canvas.getContext(
+              "2d"
+            );
+
+          ctx.drawImage(
+            img,
+            0,
+            0,
+            width,
+            height
+          );
+
+          let result =
+            canvas.toDataURL(
+              "image/webp",
+              .45
+            );
+
+          if (
+            !result.startsWith(
+              "data:image/webp"
+            )
+          ) {
+
+            result =
+              canvas.toDataURL(
+                "image/jpeg",
+                .45
+              );
+
+          }
+
+          resolve(result);
+
+        };
+
+        img.onerror =
+          () => reject();
+
+        img.src =
+          reader.result;
+
+      };
+
+      reader.onerror =
+        () => reject();
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+}
+
+
+/* =====================================================
+   PHOTO SELECT
+===================================================== */
+
+$("files")
+.addEventListener(
+  "change",
+  async function() {
+
+    photos = [];
+
+    $("thumbs")
+      .innerHTML = "";
+
+    const files =
+      Array.from(
+        this.files
+      ).slice(
+        0,
+        MAX_PHOTOS
+      );
+
+    if (
+      this.files.length >
+      MAX_PHOTOS
+    ) {
+
+      alert(
+        "Maximum 15 photos only 📸"
+      );
+
+    }
+
+    $("photoCount")
+      .textContent =
+      "Processing photos... 📸";
+
+
+    for (
+      const file of files
+    ) {
+
+      if (
+        !file.type.startsWith(
+          "image/"
+        )
+      ) {
+
+        continue;
+
+      }
+
+      try {
+
+        const image =
+          await compressImage(
+            file
+          );
+
+        photos.push(image);
+
+        const img =
+          document.createElement(
+            "img"
+          );
+
+        img.src =
+          image;
+
+        img.alt =
+          "Selected photo";
+
+        $("thumbs")
+          .appendChild(img);
+
+        $("photoCount")
+          .textContent =
+          `${photos.length} / 15 photos selected`;
+
+      } catch {
+
+        console.log(
+          "Could not process image"
+        );
+
+      }
+
+    }
+
+    if (
+      photos.length === 0
+    ) {
+
+      $("photoCount")
+        .textContent =
+        "0 / 15 photos selected";
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   DATA
+===================================================== */
+
+function makeData() {
+
+  return {
+
+    name:
+      $("name")
+        .value
+        .trim(),
+
+    password:
+      $("pass")
+        .value,
+
+    wish:
+      $("wish")
+        .value
+        .trim(),
+
+    photos:
+      photos.slice(
+        0,
+        MAX_PHOTOS
+      )
+
+  };
+
+}
+
+
+/* =====================================================
+   LOAD LINK DATA
+===================================================== */
+
+function loadData() {
+
+  const hash =
+    location.hash.substring(1);
+
+  if (!hash) {
+
+    return null;
+
+  }
+
+  return decodeData(hash);
+
+}
+
+const data =
+  loadData();
+
+
+/* =====================================================
+   PAGE SELECTION
+===================================================== */
+
+if (data) {
+
+  $("creator")
+    .classList
+    .add("hidden");
+
+  $("locked")
+    .classList
+    .remove("hidden");
+
+  $("lockedName")
+    .textContent =
+    data.name ||
+    "Someone Special";
+
+}
+
+
+/* =====================================================
+   CREATE LINK
+===================================================== */
+
+$("create")
+.addEventListener(
+  "click",
+  function() {
+
+    const name =
+      $("name")
+        .value
+        .trim();
+
+    const password =
+      $("pass")
+        .value;
+
+    const wish =
+      $("wish")
+        .value
+        .trim();
+
+
+    if (!name) {
+
+      alert(
+        "Please enter the recipient name 💗"
+      );
+
+      $("name").focus();
+
+      return;
+
+    }
+
+
+    if (!password) {
+
+      alert(
+        "Please create a password 🔐"
+      );
+
+      $("pass").focus();
+
+      return;
+
+    }
+
+
+    if (!wish) {
+
+      alert(
+        "Please write a special message 💌"
+      );
+
+      $("wish").focus();
+
+      return;
+
+    }
+
+
+    if (
+      photos.length === 0
+    ) {
+
+      alert(
+        "Please select at least one photo 📸"
+      );
+
+      return;
+
+    }
+
+
+    const surpriseData =
+      makeData();
+
+
+    let encoded;
+
+    try {
+
+      encoded =
+        encodeData(
+          surpriseData
+        );
+
+    } catch {
+
+      alert(
+        "Could not create surprise link 😭"
+      );
+
+      return;
+
+    }
+
+
+    const baseURL =
+      location.href
+        .split("#")[0];
+
+
+    const shareLink =
+      baseURL +
+      "#" +
+      encoded;
+
+
+    $("link")
+      .value =
+      shareLink;
+
+
+    $("result")
+      .classList
+      .remove("hidden");
+
+
+    $("result")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+  }
+);
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+$("copy")
+.addEventListener(
+  "click",
+  async function() {
+
+    const link =
+      $("link").value;
+
+    if (!link) return;
+
+
+    try {
+
+      await navigator
+        .clipboard
+        .writeText(link);
+
+      this.textContent =
+        "Copied! ❤️";
+
+      setTimeout(
+        () => {
+
+          this.textContent =
+            "Copy Surprise Link ❤️";
+
+        },
+        2000
+      );
+
+    } catch {
+
+      $("link").focus();
+
+      $("link").sele
