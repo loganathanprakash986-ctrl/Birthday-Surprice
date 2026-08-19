@@ -2,93 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Special Surprise 💗</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Special Birthday Surprise 💗</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- DREAMY BACKGROUND -->
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div class="background-glow glow-three"></div>
+
+
   <main class="app">
 
-    <!-- CREATOR PAGE -->
-    <section id="creator" class="card">
+    <!-- =========================
+         CREATOR PAGE
+    ========================== -->
 
-      <div class="heart">💗</div>
+    <section
+      id="creator"
+      class="card"
+    >
 
-      <h1>Create a Special Surprise</h1>
+      <div class="heart-logo">
+        💗
+      </div>
+
+      <h1>
+        Create a Special Surprise
+      </h1>
 
       <p class="subtitle">
-        Create a beautiful birthday surprise for someone special ✨
+        Create a beautiful birthday surprise
+        for someone special. Friend, partner,
+        sibling, parent, or anyone you love. ✨
       </p>
 
-      <label for="name">Recipient Name</label>
-      <input
-        id="name"
-        type="text"
-        placeholder="Enter name"
-      >
 
-      <label for="password">Secret Password 🔐</label>
-      <input
-        id="password"
-        type="password"
-        placeholder="Create a password"
-      >
+      <!-- NAME -->
 
-      <label for="message">Birthday Wishes 💌</label>
-      <textarea
-        id="message"
-        placeholder="Write your special wishes..."
-      ></textarea>
-
-      <label for="photos">
-        Photos 📸
-        <span>(Maximum 15)</span>
+      <label for="name">
+        Recipient's Name
       </label>
 
       <input
-        id="photos"
+        id="name"
+        type="text"
+        placeholder="e.g. Anu"
+        autocomplete="off"
+      >
+
+
+      <!-- PASSWORD -->
+
+      <label for="pass">
+        Create a Secret Password 🔐
+      </label>
+
+      <input
+        id="pass"
+        type="password"
+        placeholder="Enter a password"
+        autocomplete="new-password"
+      >
+
+
+      <!-- WISH -->
+
+      <label for="wish">
+        Your Special Message 💌
+      </label>
+
+      <textarea
+        id="wish"
+        placeholder="Write something special..."
+      ></textarea>
+
+
+      <!-- PHOTOS -->
+
+      <label for="files">
+        Photos
+        <span class="small-label">
+          — maximum 15
+        </span>
+        📸
+      </label>
+
+      <input
+        id="files"
         type="file"
         accept="image/*"
         multiple
       >
 
-      <p id="photoCount">0 / 15 photos selected</p>
-
-      <div id="preview"></div>
-
-      <label for="music">
-        Background Music 🎵
-      </label>
-
-      <input
-        id="music"
-        type="file"
-        accept="audio/*"
+      <div
+        id="photoCount"
+        class="photo-count"
       >
+        0 / 15 photos selected
+      </div>
 
-      <button id="createBtn">
-        Create Surprise Link ✨
+      <div
+        id="thumbs"
+        class="thumbs"
+      ></div>
+
+
+      <!-- MUSIC -->
+
+      <div class="music-info">
+
+        <div class="music-icon">
+          🎵
+        </div>
+
+        <div>
+
+          <strong>
+            Background Music
+          </strong>
+
+          <p>
+            Keep <b>music.mp3</b> beside
+            index.html
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CREATE LINK -->
+
+      <button
+        id="create"
+        class="main-button"
+        type="button"
+      >
+        Create Surprise Link 💗
       </button>
 
-      <div id="linkBox" class="hidden">
 
-        <h2>Your Surprise Link is Ready! 💗</h2>
+      <!-- RESULT -->
+
+      <div
+        id="result"
+        class="result hidden"
+      >
+
+        <h2>
+          Your Surprise Link is Ready! 💗
+        </h2>
 
         <input
-          id="shareLink"
+          id="link"
           type="text"
           readonly
         >
 
-        <button id="copyBtn">
-          Copy Link ❤️
+        <button
+          id="copy"
+          class="main-button"
+          type="button"
+        >
+          Copy Surprise Link ❤️
         </button>
 
-        <p>
+        <p class="share-note">
           Send this link to your special person 🥺💗
         </p>
 
@@ -97,71 +187,138 @@
     </section>
 
 
-    <!-- PASSWORD PAGE -->
+    <!-- =========================
+         LOCKED PAGE
+    ========================== -->
+
     <section
-      id="passwordPage"
-      class="card hidden"
+      id="locked"
+      class="card locked-card hidden"
     >
 
-      <div class="lock">🔐</div>
+      <div class="lock-icon">
+        🔐
+      </div>
 
-      <h1>A Special Surprise 💗</h1>
+      <h1>
+        A Special Surprise 💗
+      </h1>
 
-      <p>This surprise is specially made for</p>
+      <p>
+        This surprise is specially made for
+      </p>
 
-      <h2 id="recipientName"></h2>
+      <h2 id="lockedName">
+        Someone Special
+      </h2>
+
 
       <input
-        id="unlockPassword"
+        id="unlock"
         type="password"
         placeholder="Enter secret password"
+        autocomplete="off"
       >
 
-      <button id="unlockBtn">
+
+      <button
+        id="open"
+        class="main-button"
+        type="button"
+      >
         Open Surprise 💝
       </button>
 
-      <p id="error"></p>
+
+      <p
+        id="wrong"
+        class="wrong"
+      ></p>
 
     </section>
 
 
-    <!-- SURPRISE PAGE -->
+    <!-- =========================
+         SURPRISE PAGE
+    ========================== -->
+
     <section
-      id="surprisePage"
-      class="card hidden"
+      id="surprise"
+      class="card surprise-card hidden"
     >
 
-      <div class="celebration">
+      <div class="celebrate">
         🎉 💗 ✨
       </div>
 
-      <h1>Happy Birthday 🎂</h1>
 
-      <h2 id="surpriseName"></h2>
+      <h1>
+        Happy Birthday 🎂
+      </h1>
 
-      <p id="surpriseMessage"></p>
 
-      <div class="musicBox">
+      <h2 id="sname">
+        Birthday Star
+      </h2>
 
-        <button id="musicBtn">
+
+      <p
+        id="swish"
+        class="wish"
+      >
+        Wishing you a very happy birthday! 🎂❤️
+      </p>
+
+
+      <!-- MUSIC -->
+
+      <div class="music-player">
+
+        <audio
+          id="bgMusic"
+          preload="auto"
+          loop
+        >
+          <source
+            src="music.mp3"
+            type="audio/mpeg"
+          >
+
+          Your browser does not support
+          audio.
+        </audio>
+
+
+        <button
+          id="musicBtn"
+          class="music-button"
+          type="button"
+        >
           🎵 Play Music
         </button>
 
-        <audio
-          id="backgroundMusic"
-          loop
-        ></audio>
+
+        <p id="musicStatus">
+          Tap Play Music to start 🎵
+        </p>
 
       </div>
 
-      <h2 class="memories">
+
+      <!-- GALLERY -->
+
+      <h2 class="gallery-title">
         Our Beautiful Memories 📸
       </h2>
 
-      <div id="gallery"></div>
 
-      <p class="bottom">
+      <div
+        id="gallery"
+        class="gallery"
+      ></div>
+
+
+      <p class="bottom-message">
         Made with love 💗
       </p>
 
@@ -169,6 +326,8 @@
 
   </main>
 
+
+  <!-- SCRIPT -->
 
   <script src="script.js"></script>
 
